@@ -1,2 +1,13 @@
-# chumen-reminder
-出门流程倒计时与日历提醒 Web App
+# 出门督促
+
+一个在手机浏览器中运行的出门流程倒计时工具。
+
+- 自定义出门模板和每一步时长
+- 语音步骤提醒
+- 按目标出门时间自动安排
+- 将步骤导出到系统日历
+- 支持添加到 iPhone 主屏幕
+
+用户创建的模板只保存在当前设备浏览器中，不上传到服务器。详细说明见 `privacy.html`。
+
+Copyright © 2026 JiachenMi. All rights reserved.
