@@ -398,10 +398,11 @@
   @keyframes glassUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
   @keyframes glassShine{0%,45%{transform:translateX(-115%)}70%,100%{transform:translateX(115%)}}
   @media (max-width:600px){
-    html,body{width:100%;height:100%;min-height:100%;overflow:hidden;background:#8a9aaa;}
-    body{position:fixed;inset:0;}
-    .app-page{position:fixed;inset:0;width:100%;height:100%;min-height:0;padding:0;display:block;}
-    .phone-shell{position:absolute;inset:0;width:100%;height:100%;min-height:0;border-radius:0;box-shadow:none;}
+    html{background:#8a9aaa url("assets/angel-background-original.jpg") center 48% / cover no-repeat fixed;}
+    html,body{width:100%;height:var(--app-height,100lvh);min-height:var(--app-height,100lvh);overflow:hidden;}
+    body{position:fixed;top:0;left:0;width:100%;height:var(--app-height,100lvh);padding:0;background:transparent;}
+    .app-page{position:fixed;top:0;left:0;width:100%;height:var(--app-height,100lvh);min-height:0;padding:0;display:block;}
+    .phone-shell{position:absolute;top:0;left:0;width:100%;height:var(--app-height,100lvh);min-height:0;border-radius:0;box-shadow:none;}
     .dynamic-island{display:none;}
     .wrap{padding-top:calc(env(safe-area-inset-top) + 24px);padding-bottom:calc(env(safe-area-inset-bottom) + 100px);}
     #startBtn{bottom:auto;}
@@ -1112,6 +1113,20 @@ $("icsBtn").addEventListener("click", ()=>{
 $("voiceGuideBtn").addEventListener("click", ()=> $("voiceSheet").classList.remove("hidden"));
 $("voiceSheetClose").addEventListener("click", ()=> $("voiceSheet").classList.add("hidden"));
 $("voiceSheet").addEventListener("click", e=>{ if(e.target===$("voiceSheet")) $("voiceSheet").classList.add("hidden"); });
+
+/* iPhone 主屏幕模式有时会把 100vh/100% 少算一个系统安全区。 */
+function syncAppHeight(){
+  const standalone = navigator.standalone === true || window.matchMedia("(display-mode: standalone)").matches;
+  const portrait = window.innerHeight >= window.innerWidth;
+  const screenHeight = portrait
+    ? Math.max(window.screen.width || 0, window.screen.height || 0)
+    : Math.min(window.screen.width || 0, window.screen.height || 0);
+  const height = standalone ? Math.max(window.innerHeight, screenHeight) : window.innerHeight;
+  document.documentElement.style.setProperty("--app-height", Math.ceil(height) + "px");
+}
+syncAppHeight();
+window.addEventListener("resize", syncAppHeight, {passive:true});
+window.addEventListener("orientationchange", ()=>setTimeout(syncAppHeight, 120), {passive:true});
 
 /* ---------- 初始化 ---------- */
 syncRoutine();
