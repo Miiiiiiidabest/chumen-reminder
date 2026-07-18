@@ -395,6 +395,82 @@
   .restore{color:rgba(255,255,255,.62)}
   .toast{bottom:32px;color:#fff;background:rgba(47,60,75,.72);border:1px solid rgba(255,255,255,.22);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);}
 
+  /* ===== 日常极简首页 + 首次引导 ===== */
+  #runView{gap:0}
+  .home-summary{order:1;text-align:center;margin:0 0 18px;animation:glassUp .5s .18s cubic-bezier(.22,1,.36,1) both}
+  .home-summary .leave{font-size:30px;font-weight:420;line-height:1;letter-spacing:-.045em;text-shadow:0 2px 18px rgba(48,64,81,.27)}
+  .home-summary .meta{margin-top:10px;color:var(--glass-muted);font-size:12px}
+  .hero{order:2}
+  .quick-actions{order:3;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:4px 0 12px}
+  .quick-action,.flow-trigger{position:relative;border:1px solid rgba(255,255,255,.38);background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,255,255,.022) 55%,rgba(255,255,255,.08));color:#fff;-webkit-backdrop-filter:blur(4px) saturate(138%);backdrop-filter:blur(4px) saturate(138%);box-shadow:inset 0 1px 2px rgba(255,255,255,.38),0 10px 24px rgba(45,60,78,.09);cursor:pointer;font-family:inherit}
+  .quick-action{height:48px;border-radius:999px;font-size:13px}
+  .flow-trigger{order:5;width:100%;height:58px;border-radius:23px;padding:0 18px;display:flex;align-items:center;justify-content:space-between;font-size:13px}
+  .flow-trigger span:last-child{color:var(--glass-muted)}
+  .controls2{order:4;margin:0 0 12px}
+  .phone-shell.timer-idle .controls2{display:none}
+  .tip{display:none}
+  .legal-link{order:7;margin-top:14px}
+  .app-sheet{position:absolute;inset:0;z-index:70;display:flex;align-items:flex-end;background:rgba(50,63,79,.28);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+  .app-sheet-panel{width:100%;max-height:88%;padding:15px 18px calc(env(safe-area-inset-bottom) + 22px);border-radius:36px 36px 0 0;background:linear-gradient(145deg,rgba(174,189,206,.86),rgba(201,187,197,.74));border:1px solid rgba(255,255,255,.54);box-shadow:inset 0 1px 2px rgba(255,255,255,.62),0 -18px 40px rgba(49,64,81,.16);-webkit-backdrop-filter:blur(26px) saturate(145%);backdrop-filter:blur(26px) saturate(145%);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none}
+  .app-sheet-panel::-webkit-scrollbar{display:none}
+  .panel-grab{width:42px;height:4px;border-radius:99px;background:rgba(255,255,255,.56);margin:0 auto 17px}
+  .panel-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:15px}
+  .panel-head h2{margin:0 0 5px;font-size:20px;font-weight:520;letter-spacing:-.03em}
+  .panel-head p{margin:0;color:var(--glass-muted);font-size:11px}
+  .panel-close{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.38);background:rgba(255,255,255,.1);color:#fff;font-size:20px;cursor:pointer}
+  .template-panel{max-height:610px}
+  .template-panel .tplbar{display:flex;flex-direction:column;gap:9px;padding:0;margin:0;overflow:visible}
+  .template-panel .tpl-chip{width:100%;height:68px;flex:none;border-radius:23px;padding:10px 14px;display:grid;grid-template-columns:42px 1fr 28px;gap:12px;text-align:left;animation:none;opacity:1}
+  .template-panel .tpl-chip .tpl-num{width:42px;height:42px;border-radius:15px;display:grid;place-items:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.19);color:rgba(255,255,255,.76);font-size:11px}
+  .template-panel .tpl-copy{display:flex;flex-direction:column;gap:5px;min-width:0}
+  .template-panel .tpl-copy strong{font-size:14px;font-weight:540;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .template-panel .tpl-copy small{font-size:11px;color:var(--glass-muted)}
+  .template-panel .tpl-check{width:25px;height:25px;border-radius:50%;display:grid;place-items:center;color:transparent;border:1px solid rgba(255,255,255,.2);font-size:13px}
+  .template-panel .tpl-chip.on .tpl-check{color:#fff;background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.65)}
+  .template-panel .tpl-chip.add{height:48px;display:flex;width:100%;margin-top:3px;border-style:dashed;border-radius:18px;font-size:13px}
+  .time-panel{max-height:370px}
+  .time-panel .deadline{display:flex;margin:8px 0 0;padding:12px;border-radius:22px;animation:none}
+  .time-panel .deadline input[type=time]{height:48px;font-size:18px;text-align:center}
+  .time-panel .dl-btn{height:48px;padding:0 16px}
+  .flow-panel{max-height:670px}
+  .flow-panel .queue{margin:0;animation:none;max-height:520px;overflow-y:auto}
+  .editor-panel{max-height:720px}
+  #editView{padding:0}
+  #editView .qhead-edit{display:none}
+  #editView .tplname-row{margin-bottom:10px}
+  #editList{max-height:390px;overflow-y:auto;overscroll-behavior:contain;padding:2px 1px;scrollbar-width:none}
+  #editList::-webkit-scrollbar{display:none}
+  .editrow{display:grid;grid-template-columns:minmax(0,1fr) 58px 33px 40px;gap:6px;min-height:67px;padding:8px;margin-bottom:8px;transition:opacity .18s ease,transform .18s ease}
+  .editrow input[type=text]{min-width:0}
+  .editrow input[type=number]{width:58px}
+  .editrow .unit{display:none}
+  .editrow .del{width:31px;height:36px;padding:0;border:1px solid rgba(255,255,255,.17);border-radius:13px;background:rgba(255,255,255,.07)}
+  .drag-handle{width:40px;height:40px;border:0;border-radius:14px;background:rgba(255,255,255,.1);color:#fff;font-size:21px;cursor:grab;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+  .editrow.drag-source{opacity:.22;border-style:dashed;transition:none}
+  .editrow.drag-ghost{position:fixed!important;z-index:100!important;margin:0!important;pointer-events:none;transition:none!important;transform:scale(1.025);background:linear-gradient(135deg,rgba(207,218,231,.94),rgba(191,185,204,.86));border-color:rgba(255,255,255,.78);box-shadow:inset 0 1px 2px rgba(255,255,255,.7),0 18px 38px rgba(45,59,77,.28)}
+  body.sorting-steps{-webkit-user-select:none;user-select:none}
+  .editor-tip{margin:0 0 10px;text-align:center;color:var(--glass-muted);font-size:10px}
+  .restore{margin-top:12px}
+
+  .onboarding{position:absolute;inset:0;z-index:90;padding:58px 22px 24px;display:flex;flex-direction:column;background:rgba(138,154,170,.12);-webkit-backdrop-filter:blur(1px);backdrop-filter:blur(1px)}
+  .onboard-top{display:flex;align-items:flex-start;justify-content:space-between}
+  .onboard-brand h2{margin:0;font-size:25px;font-weight:520;letter-spacing:-.04em}
+  .onboard-brand p{margin:8px 0 0;color:var(--glass-muted);font-size:12px}
+  .onboard-close{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.1);color:#fff;font-size:21px}
+  .onboard-progress{display:flex;align-items:center;justify-content:space-between;margin:28px 0 18px;color:var(--glass-muted);font-size:12px}
+  .onboard-dots{display:flex;gap:6px}.onboard-dot{width:18px;height:3px;border-radius:99px;background:rgba(255,255,255,.28)}.onboard-dot.on{width:34px;background:#fff}
+  .onboard-card{flex:1;min-height:0;border:1px solid rgba(255,255,255,.38);border-radius:38px;padding:30px 24px 22px;background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.025) 52%,rgba(255,255,255,.09));-webkit-backdrop-filter:blur(9px) saturate(145%);backdrop-filter:blur(9px) saturate(145%);box-shadow:inset 0 1px 2px rgba(255,255,255,.48),0 18px 42px rgba(45,60,78,.16);display:flex;flex-direction:column;text-align:center}
+  .onboard-eyebrow{margin:0 0 12px;color:var(--glass-muted);font-size:12px}
+  .onboard-question{margin:0;font-size:27px;font-weight:480;line-height:1.16;letter-spacing:-.045em}
+  .onboard-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:0}
+  .onboard-time{width:100%;border:0;background:transparent;color:#fff;font-size:58px;font-weight:300;text-align:center;color-scheme:dark}
+  .onboard-hint{margin-top:12px;color:var(--glass-muted);font-size:11px}
+  .onboard-choices{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .onboard-choice{min-height:65px;border:1px solid rgba(255,255,255,.3);border-radius:22px;background:rgba(255,255,255,.06);color:#fff;font-size:13px}
+  .onboard-choice.on{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.68);box-shadow:inset 0 1px 2px rgba(255,255,255,.42)}
+  .onboard-ready strong{display:block;font-size:48px;font-weight:320;letter-spacing:-.05em}.onboard-ready span{display:block;margin-top:12px;color:var(--glass-muted);font-size:12px;line-height:1.7}
+  .onboard-next{width:100%;height:54px;border:1px solid rgba(255,255,255,.5);border-radius:999px;background:rgba(255,255,255,.2);color:#fff;font-size:15px;font-weight:550;box-shadow:inset 0 1px 2px rgba(255,255,255,.52)}
+
   @keyframes glassUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
   @keyframes glassShine{0%,45%{transform:translateX(-115%)}70%,100%{transform:translateX(115%)}}
   @media (max-width:600px){
@@ -439,7 +515,10 @@
 
   <!-- ====== 运行界面 ====== -->
   <section id="runView">
-    <div class="tplbar" id="tplBar"></div>
+    <div class="home-summary">
+      <div class="leave" id="leaveSummary">准备出门</div>
+      <div class="meta" id="routineSummary"></div>
+    </div>
 
     <div class="hero" id="stage">
       <svg class="relief birds" viewBox="0 0 260 170" aria-hidden="true">
@@ -541,13 +620,9 @@
       </div>
     </div>
 
-    <div class="deadline">
-      <span class="dl-k">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
-        几点出门
-      </span>
-      <input type="time" id="targetTime">
-      <button class="dl-btn" id="allocBtn">自动排</button>
+    <div class="quick-actions">
+      <button class="quick-action" id="openTimeSheet" type="button">换时间</button>
+      <button class="quick-action" id="openTemplateSheet" type="button">换模板</button>
     </div>
 
     <div class="sheet hidden" id="voiceSheet">
@@ -575,17 +650,51 @@
       </button>
     </div>
 
-    <div class="queue">
-      <div class="qhead"><h2>出门流程</h2><span class="sub" id="stepCount"></span></div>
-      <div id="queueList"></div>
-    </div>
+    <button class="flow-trigger" id="openFlowSheet" type="button"><span>查看出门流程</span><span id="flowTriggerCount">0 步⌄</span></button>
 
     <p class="tip">提示：第一次点「开始」会解锁语音（手机需要这一下）。运行时请保持本页在前台、别锁屏，语音才念得出来。</p>
     <a class="legal-link" href="privacy.html">隐私与使用说明</a>
   </section>
 
+  <section class="app-sheet hidden" id="timeSheet" aria-label="更改出门时间">
+    <div class="app-sheet-panel time-panel">
+      <div class="panel-grab"></div>
+      <div class="panel-head"><div><h2>几点出门</h2><p>选择时间后，可以按剩余时间自动安排</p></div><button class="panel-close" id="closeTimeSheet" type="button" aria-label="关闭时间设置">×</button></div>
+      <div class="deadline">
+        <span class="dl-k">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+          出门时间
+        </span>
+        <input type="time" id="targetTime">
+        <button class="dl-btn" id="allocBtn">自动排</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="app-sheet hidden" id="templateSheet" aria-label="选择出门模板">
+    <div class="app-sheet-panel template-panel">
+      <div class="panel-grab"></div>
+      <div class="panel-head"><div><h2>选择模板</h2><p>点选后立即切换今天的出门流程</p></div><button class="panel-close" id="closeTemplateSheet" type="button" aria-label="关闭模板选择">×</button></div>
+      <div class="tplbar" id="tplBar"></div>
+    </div>
+  </section>
+
+  <section class="app-sheet hidden" id="flowSheet" aria-label="完整出门流程">
+    <div class="app-sheet-panel flow-panel">
+      <div class="panel-grab"></div>
+      <div class="panel-head"><div><h2>出门流程</h2><p id="flowSummary"></p></div><button class="panel-close" id="closeFlowSheet" type="button" aria-label="关闭出门流程">×</button></div>
+      <div class="queue">
+        <div class="qhead"><h2>全部步骤</h2><span class="sub" id="stepCount"></span></div>
+        <div id="queueList"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- ====== 编辑界面 ====== -->
-  <section id="editView" class="hidden">
+  <section id="editView" class="app-sheet hidden" aria-label="编辑模板">
+   <div class="app-sheet-panel editor-panel">
+    <div class="panel-grab"></div>
+    <div class="panel-head"><div><h2>编辑模板</h2><p>修改名称、步骤和分钟，拖动 ≡ 调整顺序</p></div><button class="panel-close" id="cancelEditTop" type="button" aria-label="关闭模板编辑">×</button></div>
     <div class="qhead-edit"><h2>编辑这套流程</h2></div>
     <div class="tplname-row">
       <span class="tplname-k">模板名</span>
@@ -596,12 +705,26 @@
       </button>
     </div>
     <div id="editList"></div>
+    <p class="editor-tip">抓住右侧 ≡ 直接上下拖动</p>
     <button class="addbtn" id="addStep">＋ 添加一步</button>
     <div class="editactions">
       <button class="btn ghost" id="cancelEdit">取消</button>
       <button class="btn primary" id="saveEdit">保存</button>
     </div>
     <button class="restore" id="restoreDefault">补回自带模板</button>
+   </div>
+  </section>
+
+  <section class="onboarding hidden" id="onboarding" aria-label="首次使用设置">
+    <div class="onboard-top">
+      <div class="onboard-brand"><h2>出门督促</h2><p>一步步陪你，准时出门</p></div>
+      <button class="onboard-close" id="onboardClose" type="button" aria-label="跳过首次设置">×</button>
+    </div>
+    <div class="onboard-progress"><span id="onboardStepLabel">第 1 步，共 3 步</span><div class="onboard-dots"><i class="onboard-dot on"></i><i class="onboard-dot"></i><i class="onboard-dot"></i></div></div>
+    <div class="onboard-card">
+      <div class="onboard-body" id="onboardBody"></div>
+      <button class="onboard-next" id="onboardNext" type="button">下一步</button>
+    </div>
   </section>
 </div>
 </div>
@@ -649,6 +772,8 @@ const BUILTIN_TEMPLATES = [
 ];
 const STORE_KEY = "chumen_templates_v1";
 const OLD_KEY   = "chumen_routine_v1";
+const TARGET_KEY = "chumen_target_v1";
+const ONBOARD_KEY = "chumen_onboarding_v2";
 const RING_C = 2 * Math.PI * 108;        // 圆环周长
 
 /* ---------- 状态 ---------- */
@@ -661,6 +786,7 @@ let running = false, paused = false;
 let curStep = -1, stepEndAt = 0, stepDurMs = 0, pauseLeftMs = 0;
 let ticker = null, announced = {}, wakeLock = null;
 let orbitSecond = null, orbitPhase = 0;
+let onboardStep = 0, onboardTarget = "", onboardTemplateId = "";
 
 /* ---------- 工具 ---------- */
 const $ = id => document.getElementById(id);
@@ -711,6 +837,24 @@ function scrollMainTop(smooth){
   const view=document.querySelector(".wrap");
   if(view) view.scrollTo({top:0,behavior:smooth?"smooth":"auto"});
 }
+function formatLeaveTime(value){
+  const parts=String(value||"").split(":");
+  const h=Number(parts[0]), m=Number(parts[1]);
+  if(!Number.isFinite(h)||!Number.isFinite(m)) return "准备出门";
+  const period=h<12?"上午":"下午";
+  const hour=h%12||12;
+  return period+" "+hour+":"+String(m).padStart(2,"0")+" 出门";
+}
+function updateHomeSummary(){
+  const target=$("targetTime").value||defaultTargetStr();
+  $("leaveSummary").textContent=formatLeaveTime(target);
+  const meta=activeTpl().name+" · "+routine.length+" 步 · 约 "+totalMin()+" 分钟";
+  $("routineSummary").textContent=meta;
+  $("flowSummary").textContent=meta;
+  $("flowTriggerCount").textContent=routine.length+" 步⌄";
+}
+function openSheet(id){ $(id).classList.remove("hidden"); }
+function closeSheet(id){ $(id).classList.add("hidden"); }
 
 /* ---------- 图标(开始/暂停) ---------- */
 const IC_PLAY  = '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 5.5l12 6.5-12 6.5z"/></svg>';
@@ -767,6 +911,7 @@ function renderQueue(){
     list.appendChild(el);
   });
   $("stepCount").textContent = routine.length + " 步 · 约 " + totalMin() + " 分钟";
+  updateHomeSummary();
 }
 function renderTop(remainMs){
   const after = remainMs!=null ? remainMs : totalMin()*60000;
@@ -893,21 +1038,29 @@ function stop(resetBtns){
 /* ---------- 模板切换栏 ---------- */
 function renderTemplates(){
   const bar = $("tplBar"); bar.innerHTML = "";
-  store.templates.forEach(t=>{
+  store.templates.forEach((t,index)=>{
     const b = document.createElement("button");
     b.className = "tpl-chip" + (t.id===store.activeId ? " on" : "");
-    b.textContent = t.name;
+    b.type = "button";
+    b.setAttribute("aria-pressed",String(t.id===store.activeId));
+    const mins=t.steps.reduce((sum,step)=>sum+(Number(step.min)||0),0);
+    const num=document.createElement("span"); num.className="tpl-num"; num.textContent=String(index+1).padStart(2,"0");
+    const copy=document.createElement("span"); copy.className="tpl-copy";
+    const name=document.createElement("strong"); name.textContent=t.name;
+    const meta=document.createElement("small"); meta.textContent=t.steps.length+" 步 · 约 "+mins+" 分钟";
+    const check=document.createElement("span"); check.className="tpl-check"; check.textContent="✓";
+    copy.append(name,meta); b.append(num,copy,check);
     b.addEventListener("click", ()=>{
       if(running){ toast("运行中，先点重置再切换"); return; }
       store.activeId=t.id; saveStore(); syncRoutine();
       reset(); renderTemplates();
-      $("targetTime").value = defaultTargetStr();
+      closeSheet("templateSheet");
       toast("已切到「"+t.name+"」");
     });
     bar.appendChild(b);
   });
   const add = document.createElement("button");
-  add.className="tpl-chip add"; add.textContent="＋ 新建";
+  add.type="button"; add.className="tpl-chip add"; add.textContent="＋ 新建模板";
   add.addEventListener("click", newTemplate);
   bar.appendChild(add);
 }
@@ -916,6 +1069,7 @@ function newTemplate(){
   const t = { id:"t_"+Date.now().toString(36), name:"新模板", steps:[{ name:"第一步", min:3 }] };
   store.templates.push(t); store.activeId=t.id; saveStore();
   syncRoutine(); renderTemplates(); reset();
+  closeSheet("templateSheet");
   openEdit();
 }
 
@@ -924,15 +1078,12 @@ function openEdit(){
   $("tplName").value = activeTpl().name;
   editing = routine.map(s=>({...s}));
   renderEdit();
-  $("runView").classList.add("hidden");
   $("editView").classList.remove("hidden");
   $("editToggle").classList.add("on");
   document.querySelector(".phone-shell").classList.add("editing");
-  scrollMainTop(false);
 }
 function closeEdit(){
   $("editView").classList.add("hidden");
-  $("runView").classList.remove("hidden");
   $("editToggle").classList.remove("on");
   document.querySelector(".phone-shell").classList.remove("editing");
 }
@@ -941,25 +1092,83 @@ function renderEdit(){
   editing.forEach((s,i)=>{
     const row = document.createElement("div");
     row.className = "editrow";
-    row.innerHTML =
-      '<div style="display:flex;flex-direction:column;gap:4px;">'+
-        '<button class="mv up">▲</button><button class="mv down">▼</button></div>'+
-      '<input type="text" class="nm" placeholder="步骤名称">'+
-      '<input type="number" class="min" min="0" max="120">'+
-      '<span class="unit">分</span>'+
-      '<button class="del">✕</button>';
+    row.innerHTML = '<input type="text" class="nm" maxlength="24" placeholder="步骤名称">'+
+      '<input type="number" class="min" min="1" max="120" inputmode="numeric" aria-label="分钟">'+
+      '<button type="button" class="del" aria-label="删除步骤">−</button>'+
+      '<button type="button" class="drag-handle" aria-label="拖动步骤">≡</button>';
     row.querySelector(".nm").value = s.name;
-    row.querySelector(".min").value = s.min;
+    row.querySelector(".min").value = Math.max(1,Number(s.min)||1);
     row.querySelector(".nm").addEventListener("input", e=> editing[i].name = e.target.value);
-    row.querySelector(".min").addEventListener("input", e=> editing[i].min = Math.max(0, Number(e.target.value)||0));
-    row.querySelector(".up").addEventListener("click", ()=>move(i,-1));
-    row.querySelector(".down").addEventListener("click", ()=>move(i,1));
-    row.querySelector(".del").addEventListener("click", ()=>{ editing.splice(i,1); renderEdit(); });
+    row.querySelector(".min").addEventListener("input", e=> editing[i].min = Math.min(120,Math.max(1,Number(e.target.value)||1)));
+    row.querySelector(".del").addEventListener("click", ()=>{
+      if(editing.length<=1){ toast("模板至少需要保留一步"); return; }
+      editing.splice(i,1); renderEdit();
+    });
+    bindEditDrag(row,list);
     list.appendChild(row);
   });
 }
-function move(i,dir){ const j=i+dir; if(j<0||j>=editing.length) return;
-  [editing[i],editing[j]]=[editing[j],editing[i]]; renderEdit(); }
+function readEditingOrder(list){
+  return Array.from(list.children).map(row=>({
+    name:(row.querySelector(".nm").value||"").trim()||"未命名步骤",
+    min:Math.min(120,Math.max(1,Number(row.querySelector(".min").value)||1))
+  }));
+}
+function bindEditDrag(row,list){
+  const handle=row.querySelector(".drag-handle");
+  let active=false,moved=false,ghost=null,startY=0,grabOffsetY=0,originalNext=null,pointerId=null;
+  const moveDrag=event=>{
+    if(!active||event.pointerId!==pointerId) return;
+    event.preventDefault();
+    if(ghost) ghost.style.top=(event.clientY-grabOffsetY)+"px";
+    if(Math.abs(event.clientY-startY)<4) return;
+    moved=true;
+    const bounds=list.getBoundingClientRect();
+    if(event.clientY<bounds.top+34) list.scrollBy({top:-12,behavior:"auto"});
+    if(event.clientY>bounds.bottom-34) list.scrollBy({top:12,behavior:"auto"});
+    const others=Array.from(list.querySelectorAll(".editrow:not(.drag-source)"));
+    const before=others.find(candidate=>{ const r=candidate.getBoundingClientRect(); return event.clientY<r.top+r.height/2; });
+    if(before) before.before(row); else list.append(row);
+  };
+  const finishDrag=event=>{
+    if(!active||(event.pointerId!==undefined&&event.pointerId!==pointerId)) return;
+    const cancelled=event.type==="pointercancel";
+    active=false;
+    window.removeEventListener("pointermove",moveDrag);
+    window.removeEventListener("pointerup",finishDrag);
+    window.removeEventListener("pointercancel",finishDrag);
+    if(cancelled){ if(originalNext&&originalNext.parentElement===list) originalNext.before(row); else list.append(row); }
+    try{handle.releasePointerCapture(event.pointerId)}catch(e){}
+    ghost&&ghost.remove();
+    row.classList.remove("drag-source");
+    document.body.classList.remove("sorting-steps");
+    editing=readEditingOrder(list);
+    if(moved&&!cancelled){ renderEdit(); toast("顺序已调整"); }
+    pointerId=null;
+  };
+  handle.addEventListener("pointerdown",event=>{
+    if(event.pointerType==="mouse"&&event.button!==0) return;
+    if(event.isPrimary===false||active) return;
+    event.preventDefault();
+    active=true;moved=false;pointerId=event.pointerId;startY=event.clientY;originalNext=row.nextElementSibling;
+    const rect=row.getBoundingClientRect();grabOffsetY=event.clientY-rect.top;
+    ghost=row.cloneNode(true);ghost.classList.add("drag-ghost");ghost.setAttribute("aria-hidden","true");
+    Object.assign(ghost.style,{left:rect.left+"px",top:rect.top+"px",width:rect.width+"px",height:rect.height+"px"});
+    document.body.append(ghost);row.classList.add("drag-source");document.body.classList.add("sorting-steps");
+    window.addEventListener("pointermove",moveDrag,{passive:false});
+    window.addEventListener("pointerup",finishDrag);window.addEventListener("pointercancel",finishDrag);
+    try{handle.setPointerCapture(event.pointerId)}catch(e){}
+    if(navigator.vibrate) navigator.vibrate(10);
+  });
+  handle.addEventListener("keydown",event=>{
+    if(!["ArrowUp","ArrowDown"].includes(event.key)) return;
+    event.preventDefault();
+    const sibling=event.key==="ArrowUp"?row.previousElementSibling:row.nextElementSibling;
+    if(!sibling) return;
+    if(event.key==="ArrowUp") sibling.before(row); else sibling.after(row);
+    editing=readEditingOrder(list);renderEdit();
+  });
+}
 
 /* ---------- 事件绑定 ---------- */
 $("startBtn").addEventListener("click", ()=>{ if(!running) start(); else if(paused) resume(); else pause(); });
@@ -971,13 +1180,13 @@ $("editToggle").addEventListener("click", ()=>{
     openEdit();
   } else closeEdit();
 });
+$("cancelEditTop").addEventListener("click", closeEdit);
 $("addStep").addEventListener("click", ()=>{ editing.push({name:"新步骤", min:1}); renderEdit();
-  setTimeout(()=>window.scrollTo({top:document.body.scrollHeight, behavior:"smooth"}),0); });
+  setTimeout(()=>$("editList").scrollTo({top:$("editList").scrollHeight,behavior:"smooth"}),0); });
 $("cancelEdit").addEventListener("click", closeEdit);
 $("saveEdit").addEventListener("click", ()=>{
   const clean = editing
-    .map(s=>({ name:(s.name||"").trim() || "未命名", min: Math.max(0, Number(s.min)||0) }))
-    .filter(s=> s.min>0 || s.name!=="未命名");
+    .map(s=>({ name:(s.name||"").trim() || "未命名步骤", min: Math.min(120,Math.max(1,Number(s.min)||1)) }));
   if(!clean.length){ toast("至少留一步"); return; }
   const t = activeTpl();
   t.name = ($("tplName").value||"").trim() || "未命名模板";
@@ -986,6 +1195,16 @@ $("saveEdit").addEventListener("click", ()=>{
   closeEdit(); reset(); renderTemplates();
   toast("已保存 ✓");
 });
+$("openTimeSheet").addEventListener("click",()=>openSheet("timeSheet"));
+$("closeTimeSheet").addEventListener("click",()=>closeSheet("timeSheet"));
+$("openTemplateSheet").addEventListener("click",()=>{renderTemplates();openSheet("templateSheet")});
+$("closeTemplateSheet").addEventListener("click",()=>closeSheet("templateSheet"));
+$("openFlowSheet").addEventListener("click",()=>{renderQueue();openSheet("flowSheet")});
+$("closeFlowSheet").addEventListener("click",()=>closeSheet("flowSheet"));
+["timeSheet","templateSheet","flowSheet"].forEach(id=>{
+  $(id).addEventListener("click",event=>{if(event.target===$(id)) closeSheet(id)});
+});
+$("editView").addEventListener("click",event=>{if(event.target===$("editView")) closeEdit()});
 $("delTpl").addEventListener("click", ()=>{
   if(store.templates.length<=1){ toast("至少留一个模板"); return; }
   const t = activeTpl();
@@ -993,7 +1212,6 @@ $("delTpl").addEventListener("click", ()=>{
   store.activeId = store.templates[0].id;
   syncRoutine(); saveStore();
   closeEdit(); reset(); renderTemplates();
-  $("targetTime").value = defaultTargetStr();
   toast("已删除「"+t.name+"」");
 });
 $("restoreDefault").addEventListener("click", ()=>{
@@ -1049,7 +1267,9 @@ function doAllocate(){
   if(diffMin==null || diffMin<=0){ toast("没看懂这个时间，换一个试试"); return; }
   const need = allocateByDeadline(diffMin);
   if(!need){ toast("先在编辑里加几步"); return; }
-  saveStore(); reset();
+  saveStore();
+  try{localStorage.setItem(TARGET_KEY,v)}catch(e){}
+  reset(); updateHomeSummary(); closeSheet("timeSheet");
   $("curIdx").textContent = "已按 " + v + " 出门排好 · 共 " + totalMin() + " 分钟";
   if(need > diffMin) toast("时间太紧!这些步至少要 " + need + " 分钟");
   else toast("已把 " + diffMin + " 分钟分到 " + routine.length + " 步 ✓");
@@ -1114,6 +1334,61 @@ $("voiceGuideBtn").addEventListener("click", ()=> $("voiceSheet").classList.remo
 $("voiceSheetClose").addEventListener("click", ()=> $("voiceSheet").classList.add("hidden"));
 $("voiceSheet").addEventListener("click", e=>{ if(e.target===$("voiceSheet")) $("voiceSheet").classList.add("hidden"); });
 
+/* ---------- 首次打开三步引导 ---------- */
+function renderOnboarding(){
+  const body=$("onboardBody");
+  const dots=Array.from(document.querySelectorAll(".onboard-dot"));
+  $("onboardStepLabel").textContent="第 "+(onboardStep+1)+" 步，共 3 步";
+  dots.forEach((dot,index)=>dot.classList.toggle("on",index===onboardStep));
+  body.innerHTML="";
+  if(onboardStep===0){
+    body.innerHTML='<p class="onboard-eyebrow">先确认今天的安排</p><h3 class="onboard-question">你今天几点出门？</h3><div style="height:54px"></div><input class="onboard-time" id="onboardTime" type="time" aria-label="今天几点出门"><div class="onboard-hint">点击时间可以修改</div>';
+    $("onboardTime").value=onboardTarget||$("targetTime").value||defaultTargetStr();
+    $("onboardNext").textContent="下一步";
+    return;
+  }
+  if(onboardStep===1){
+    const eyebrow=document.createElement("p");eyebrow.className="onboard-eyebrow";eyebrow.textContent="选择今天的节奏";
+    const title=document.createElement("h3");title.className="onboard-question";title.textContent="今天用哪个模板？";
+    const spacer=document.createElement("div");spacer.style.height="30px";
+    const choices=document.createElement("div");choices.className="onboard-choices";
+    store.templates.slice(0,4).forEach(template=>{
+      const choice=document.createElement("button");choice.type="button";choice.className="onboard-choice"+(template.id===onboardTemplateId?" on":"");choice.textContent=template.name;
+      choice.addEventListener("click",()=>{onboardTemplateId=template.id;renderOnboarding()});choices.appendChild(choice);
+    });
+    body.append(eyebrow,title,spacer,choices);$("onboardNext").textContent="下一步";return;
+  }
+  const selected=store.templates.find(template=>template.id===onboardTemplateId)||activeTpl();
+  const mins=selected.steps.reduce((sum,step)=>sum+(Number(step.min)||0),0);
+  const eyebrow=document.createElement("p");eyebrow.className="onboard-eyebrow";eyebrow.textContent="已经准备好了";
+  const title=document.createElement("h3");title.className="onboard-question";title.textContent="现在开始刚刚好";
+  const ready=document.createElement("div");ready.className="onboard-ready";
+  const time=document.createElement("strong");time.textContent=fmt(mins*60000);
+  const meta=document.createElement("span");meta.textContent=selected.name+" · "+selected.steps.length+" 步\n"+formatLeaveTime(onboardTarget);
+  ready.append(time,meta);body.append(eyebrow,title,ready);$("onboardNext").textContent="开始准备";
+}
+function finishOnboarding(){
+  if(onboardTemplateId&&store.templates.some(template=>template.id===onboardTemplateId)) store.activeId=onboardTemplateId;
+  saveStore();syncRoutine();
+  if(onboardTarget) $("targetTime").value=onboardTarget;
+  try{localStorage.setItem(TARGET_KEY,$("targetTime").value);localStorage.setItem(ONBOARD_KEY,"done")}catch(e){}
+  $("onboarding").classList.add("hidden");
+  reset();renderTemplates();updateHomeSummary();start();
+}
+$("onboardNext").addEventListener("click",()=>{
+  if(onboardStep===0){
+    onboardTarget=$("onboardTime").value;
+    if(!onboardTarget){toast("先选一个出门时间");return;}
+    onboardStep=1;renderOnboarding();return;
+  }
+  if(onboardStep===1){onboardStep=2;renderOnboarding();return;}
+  finishOnboarding();
+});
+$("onboardClose").addEventListener("click",()=>{
+  try{localStorage.setItem(ONBOARD_KEY,"done")}catch(e){}
+  $("onboarding").classList.add("hidden");
+});
+
 /* iPhone 主屏幕模式有时会把 100vh/100% 少算一个系统安全区。 */
 function syncAppHeight(){
   const standalone = navigator.standalone === true || window.matchMedia("(display-mode: standalone)").matches;
@@ -1135,7 +1410,14 @@ renderTemplates();
 renderQueue();
 renderTop(null);
 showReadyTimer();
-$("targetTime").value = defaultTargetStr();
+let savedTarget="";
+try{savedTarget=localStorage.getItem(TARGET_KEY)||""}catch(e){}
+$("targetTime").value = savedTarget || defaultTargetStr();
+updateHomeSummary();
+onboardTarget=$("targetTime").value;onboardTemplateId=store.activeId;
+let onboardingDone=false;
+try{onboardingDone=localStorage.getItem(ONBOARD_KEY)==="done"}catch(e){}
+if(!onboardingDone){$("onboarding").classList.remove("hidden");renderOnboarding()}
 requestAnimationFrame(()=>scrollMainTop(false));
 
 if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
