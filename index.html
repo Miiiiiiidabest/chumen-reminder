@@ -471,6 +471,19 @@
   .onboard-choice.on{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.68);box-shadow:inset 0 1px 2px rgba(255,255,255,.42)}
   .onboard-ready{margin:38px 0 8px}.onboard-ready strong{display:block;font-size:48px;font-weight:320;letter-spacing:-.05em;text-shadow:0 2px 16px rgba(48,62,80,.28)}.onboard-ready span{display:block;margin-top:12px;color:var(--glass-muted);font-size:12px;line-height:1.7}
   .onboard-next{width:100%;height:54px;margin-top:24px;border:1px solid rgba(255,255,255,.5);border-radius:999px;background:rgba(255,255,255,.2);color:#fff;font-size:15px;font-weight:550;box-shadow:inset 0 1px 2px rgba(255,255,255,.52)}
+  .onboarding[data-step="1"] .onboard-body{flex:1;justify-content:center}
+  .onboarding[data-step="1"] .onboard-next{margin-top:0}
+  .onboarding[data-step="1"] .onboard-progress{margin:27px 0 0}
+  .onboarding[data-step="1"] .onboard-card{position:relative;flex:0 0 420px;height:420px;margin:18px 0 0;border:1px solid rgba(255,255,255,.32);border-radius:42px;padding:34px 26px 26px;background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.018) 55%,rgba(255,255,255,.075));-webkit-backdrop-filter:blur(7px) saturate(150%);backdrop-filter:blur(7px) saturate(150%);box-shadow:inset 0 1px 2px rgba(255,255,255,.62),inset 0 -1px 1px rgba(255,255,255,.16),0 14px 34px rgba(45,60,78,.16)}
+  .onboarding[data-step="1"] .onboard-card::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(118deg,rgba(255,255,255,.18),transparent 28%,transparent 70%,rgba(255,255,255,.06))}
+  .onboarding[data-step="1"] .onboard-eyebrow{margin:0 0 13px;color:rgba(255,255,255,.63);font-size:12px;letter-spacing:.04em}
+  .onboarding[data-step="1"] .onboard-question{max-width:260px;font-size:27px;line-height:1.15;text-shadow:none}
+  .onboarding[data-step="1"] .onboard-time-display{position:relative;z-index:2;border:0;padding:0;background:transparent;color:#fff;font-size:63px;line-height:1;font-weight:300;letter-spacing:-.055em;text-shadow:0 2px 22px rgba(43,60,79,.28)}
+  .onboarding[data-step="1"] .onboard-time-native{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+  .onboarding[data-step="1"] .onboard-hint{margin-top:13px;font-size:12px}
+  .onboarding[data-step="1"] .onboard-next{position:relative;z-index:2;height:54px;border-color:rgba(255,255,255,.48);background:rgba(255,255,255,.18);font-size:16px;font-weight:530;box-shadow:inset 0 1px 2px rgba(255,255,255,.56),0 10px 24px rgba(50,66,84,.15)}
+  .onboarding[data-step="3"] .onboard-card{min-height:430px}
+  .onboarding[data-step="3"] .onboard-body{flex:1;justify-content:center}
 
   @keyframes glassUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
   @keyframes glassShine{0%,45%{transform:translateX(-115%)}70%,100%{transform:translateX(115%)}}
@@ -1337,14 +1350,18 @@ $("voiceSheet").addEventListener("click", e=>{ if(e.target===$("voiceSheet")) $(
 
 /* ---------- 首次打开三步引导 ---------- */
 function renderOnboarding(){
+  $("onboarding").dataset.step=String(onboardStep+1);
   const body=$("onboardBody");
   const dots=Array.from(document.querySelectorAll(".onboard-dot"));
   $("onboardStepLabel").textContent="第 "+(onboardStep+1)+" 步，共 3 步";
   dots.forEach((dot,index)=>dot.classList.toggle("on",index===onboardStep));
   body.innerHTML="";
   if(onboardStep===0){
-    body.innerHTML='<p class="onboard-eyebrow">先确认今天的安排</p><h3 class="onboard-question">你今天几点出门？</h3><div style="height:54px"></div><input class="onboard-time" id="onboardTime" type="time" aria-label="今天几点出门"><div class="onboard-hint">点击时间可以修改</div>';
+    body.innerHTML='<p class="onboard-eyebrow">先确认今天的安排</p><h3 class="onboard-question">你今天几点出门？</h3><div style="height:58px"></div><button class="onboard-time-display" id="onboardTimeDisplay" type="button" aria-label="修改出门时间"></button><input class="onboard-time-native" id="onboardTime" type="time" tabindex="-1" aria-hidden="true"><div class="onboard-hint">点击时间可以修改</div>';
     $("onboardTime").value=onboardTarget||$("targetTime").value||defaultTargetStr();
+    $("onboardTimeDisplay").textContent=$("onboardTime").value;
+    $("onboardTimeDisplay").addEventListener("click",()=>{try{if($("onboardTime").showPicker) $("onboardTime").showPicker();else $("onboardTime").click()}catch(e){$("onboardTime").click()}});
+    $("onboardTime").addEventListener("change",()=>{$("onboardTimeDisplay").textContent=$("onboardTime").value});
     $("onboardNext").textContent="下一步";
     return;
   }
