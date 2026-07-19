@@ -1,4 +1,4 @@
-const CACHE_NAME = "chumen-glass-v17";
+const CACHE_NAME = "chumen-glass-v18";
 const APP_SHELL = [
   "./",
   "./index.html",

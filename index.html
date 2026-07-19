@@ -452,24 +452,25 @@
   .editor-tip{margin:0 0 10px;text-align:center;color:var(--glass-muted);font-size:10px}
   .restore{margin-top:12px}
 
-  .onboarding{position:absolute;inset:0;z-index:90;padding:58px 22px 24px;display:flex;flex-direction:column;background:linear-gradient(180deg,rgba(91,108,128,.84),rgba(106,119,138,.78));-webkit-backdrop-filter:blur(26px) saturate(80%) brightness(.76);backdrop-filter:blur(26px) saturate(80%) brightness(.76)}
+  .phone-shell.onboarding-active .wrap > :not(.onboarding){visibility:hidden;pointer-events:none}
+  .onboarding{position:absolute;inset:0;z-index:90;padding:58px 22px 24px;display:flex;flex-direction:column;background:rgba(138,154,170,.12);-webkit-backdrop-filter:blur(1px);backdrop-filter:blur(1px)}
   .onboard-top{display:flex;align-items:flex-start;justify-content:space-between}
   .onboard-brand h2{margin:0;font-size:25px;font-weight:520;letter-spacing:-.04em}
-  .onboard-brand p{margin:8px 0 0;color:rgba(255,255,255,.8);font-size:12px}
-  .onboard-close{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.62);background:rgba(255,255,255,.16);color:#fff;font-size:21px;box-shadow:inset 0 1px 1px rgba(255,255,255,.42)}
-  .onboard-progress{display:flex;align-items:center;justify-content:space-between;margin:28px 0 18px;color:rgba(255,255,255,.82);font-size:12px}
+  .onboard-brand p{margin:8px 0 0;color:var(--glass-muted);font-size:12px}
+  .onboard-close{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.1);color:#fff;font-size:21px}
+  .onboard-progress{display:flex;align-items:center;justify-content:space-between;margin:28px 0 18px;color:var(--glass-muted);font-size:12px}
   .onboard-dots{display:flex;gap:6px}.onboard-dot{width:18px;height:3px;border-radius:99px;background:rgba(255,255,255,.28)}.onboard-dot.on{width:34px;background:#fff}
-  .onboard-card{flex:1;min-height:0;border:1px solid rgba(255,255,255,.62);border-radius:38px;padding:30px 24px 22px;background:linear-gradient(145deg,rgba(104,124,148,.88),rgba(91,105,124,.8) 54%,rgba(118,112,132,.78));-webkit-backdrop-filter:blur(28px) saturate(120%);backdrop-filter:blur(28px) saturate(120%);box-shadow:inset 0 1px 2px rgba(255,255,255,.62),0 22px 48px rgba(35,48,66,.3);display:flex;flex-direction:column;text-align:center}
-  .onboard-eyebrow{margin:0 0 12px;color:rgba(255,255,255,.82);font-size:12px}
-  .onboard-question{margin:0;font-size:27px;font-weight:520;line-height:1.16;letter-spacing:-.045em;text-shadow:0 2px 12px rgba(39,53,72,.32)}
+  .onboard-card{flex:1;min-height:0;border:1px solid rgba(255,255,255,.38);border-radius:38px;padding:30px 24px 22px;background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.025) 52%,rgba(255,255,255,.09));-webkit-backdrop-filter:blur(9px) saturate(145%);backdrop-filter:blur(9px) saturate(145%);box-shadow:inset 0 1px 2px rgba(255,255,255,.48),0 18px 42px rgba(45,60,78,.16);display:flex;flex-direction:column;text-align:center}
+  .onboard-eyebrow{margin:0 0 12px;color:var(--glass-muted);font-size:12px}
+  .onboard-question{margin:0;font-size:27px;font-weight:480;line-height:1.16;letter-spacing:-.045em;text-shadow:0 2px 14px rgba(48,62,80,.28)}
   .onboard-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:0}
-  .onboard-time{width:100%;border:0;background:transparent;color:#fff;font-size:58px;font-weight:350;text-align:center;color-scheme:dark;text-shadow:0 3px 18px rgba(34,48,66,.36)}
-  .onboard-hint{margin-top:12px;color:rgba(255,255,255,.78);font-size:11px}
+  .onboard-time{width:100%;border:0;background:transparent;color:#fff;font-size:58px;font-weight:300;text-align:center;color-scheme:dark;text-shadow:0 2px 16px rgba(48,62,80,.28)}
+  .onboard-hint{margin-top:12px;color:var(--glass-muted);font-size:11px}
   .onboard-choices{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .onboard-choice{min-height:65px;border:1px solid rgba(255,255,255,.5);border-radius:22px;background:rgba(255,255,255,.12);color:#fff;font-size:13px}
-  .onboard-choice.on{background:rgba(255,255,255,.28);border-color:rgba(255,255,255,.88);box-shadow:inset 0 1px 2px rgba(255,255,255,.55),0 7px 18px rgba(39,52,70,.16)}
-  .onboard-ready strong{display:block;font-size:48px;font-weight:360;letter-spacing:-.05em;text-shadow:0 3px 18px rgba(34,48,66,.32)}.onboard-ready span{display:block;margin-top:12px;color:rgba(255,255,255,.82);font-size:12px;line-height:1.7}
-  .onboard-next{width:100%;height:54px;border:1px solid rgba(255,255,255,.76);border-radius:999px;background:rgba(255,255,255,.26);color:#fff;font-size:15px;font-weight:600;box-shadow:inset 0 1px 2px rgba(255,255,255,.62),0 8px 22px rgba(39,52,70,.2)}
+  .onboard-choice{min-height:65px;border:1px solid rgba(255,255,255,.3);border-radius:22px;background:rgba(255,255,255,.06);color:#fff;font-size:13px}
+  .onboard-choice.on{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.68);box-shadow:inset 0 1px 2px rgba(255,255,255,.42)}
+  .onboard-ready strong{display:block;font-size:48px;font-weight:320;letter-spacing:-.05em;text-shadow:0 2px 16px rgba(48,62,80,.28)}.onboard-ready span{display:block;margin-top:12px;color:var(--glass-muted);font-size:12px;line-height:1.7}
+  .onboard-next{width:100%;height:54px;border:1px solid rgba(255,255,255,.5);border-radius:999px;background:rgba(255,255,255,.2);color:#fff;font-size:15px;font-weight:550;box-shadow:inset 0 1px 2px rgba(255,255,255,.52)}
 
   @keyframes glassUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
   @keyframes glassShine{0%,45%{transform:translateX(-115%)}70%,100%{transform:translateX(115%)}}
@@ -1373,6 +1374,7 @@ function finishOnboarding(){
   if(onboardTarget) $("targetTime").value=onboardTarget;
   try{localStorage.setItem(TARGET_KEY,$("targetTime").value);localStorage.setItem(ONBOARD_KEY,"done")}catch(e){}
   $("onboarding").classList.add("hidden");
+  document.querySelector(".phone-shell").classList.remove("onboarding-active");
   reset();renderTemplates();updateHomeSummary();start();
 }
 $("onboardNext").addEventListener("click",()=>{
@@ -1387,6 +1389,7 @@ $("onboardNext").addEventListener("click",()=>{
 $("onboardClose").addEventListener("click",()=>{
   try{localStorage.setItem(ONBOARD_KEY,"done")}catch(e){}
   $("onboarding").classList.add("hidden");
+  document.querySelector(".phone-shell").classList.remove("onboarding-active");
 });
 
 /* iPhone 主屏幕模式有时会把 100vh/100% 少算一个系统安全区。 */
@@ -1417,7 +1420,7 @@ updateHomeSummary();
 onboardTarget=$("targetTime").value;onboardTemplateId=store.activeId;
 let onboardingDone=false;
 try{onboardingDone=localStorage.getItem(ONBOARD_KEY)==="done"}catch(e){}
-if(!onboardingDone){$("onboarding").classList.remove("hidden");renderOnboarding()}
+if(!onboardingDone){document.querySelector(".phone-shell").classList.add("onboarding-active");$("onboarding").classList.remove("hidden");renderOnboarding()}
 requestAnimationFrame(()=>scrollMainTop(false));
 
 if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
